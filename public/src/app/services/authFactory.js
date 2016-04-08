@@ -58,3 +58,4 @@ angular.module('karaoke.services')
   };
   return attach;
 });
+
