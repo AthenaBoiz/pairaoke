@@ -11,7 +11,7 @@ angular.module('karaoke', [
   'ui.router'
 ])
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
