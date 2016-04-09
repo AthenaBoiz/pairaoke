@@ -26,6 +26,7 @@ module.exports = function(config) {
       'tests/client/stateSpec.js',
       'tests/client/locationFactorySpec.js',
       'tests/client/navCtrlSpec.js'
+      'tests/client/authCtrlSpec.js'
     ],
 
     reporters: ['nyan', 'unicorn'],
