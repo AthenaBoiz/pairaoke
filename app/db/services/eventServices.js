@@ -53,7 +53,9 @@ module.exports = {
   // THIS NEEDS TO GET BUILT OUT
   getEvents: function(req, res, next) {
     new Event()
-      .fetchAll()
+      .fetchAll({
+        withRelated: ['user']
+      })
       .then(function(events) {
         res.status(200).send(events);
       }).catch(function(err) {
