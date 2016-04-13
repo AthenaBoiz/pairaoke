@@ -23,7 +23,7 @@ angular.module('karaoke.services')
   };
 
   return {
-    addEvent : addEvent,
-    getOne : getOne
+    addEvent: addEvent,
+    getOne: getOne
   };
 });

@@ -13,7 +13,7 @@ angular.module('karaoke.event', [])
     var date = parseTime(response.time);
     $scope.creator = response.user.username;
     $scope.song = response.song_title;
-    $scope.artist = response.as_sung_by;    
+    $scope.artist = response.as_sung_by;
     $scope.date = date.day;
     $scope.time = date.time;
     
@@ -51,11 +51,12 @@ angular.module('karaoke.event', [])
     time += ' ' + meridian;
 
     return {
-      day : day,
-      time : time
+      day: day,
+      time: time
     };
   }
 
+<<<<<<< HEAD
   var rendermap = function(lat, long) {
     var map = L.map('event_map').setView([lat, long], 15);  //<-- zoom level, larger is zoomed in
     L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
@@ -75,3 +76,6 @@ angular.module('karaoke.event', [])
   };
 
 });
+=======
+});
+>>>>>>> set up events page framework
