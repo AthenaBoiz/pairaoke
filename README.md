@@ -58,6 +58,7 @@ Run node to start the server
 ```sh
 node index.js
 ```
+Server fires up at `localhost:8000`
 
 #### To build for production:
 ```sh
