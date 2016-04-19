@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   'use strict';
 
+  // all libraries, add as needed
   var jsLibs = [
     'bower_components/angular/angular.min.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
@@ -8,6 +9,7 @@ module.exports = function(grunt) {
     'bower_components/leaflet/dist/leaflet.js',
     'bower_components/velocity/velocity.min.js', 
   ];
+
   var jsApp = ['public/src/app/**/*.js'];
 
   grunt.initConfig({
@@ -24,6 +26,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // postcss plugin for adding vendor prefixes
     autoprefixer: {
       dist: {
         files: {
@@ -48,6 +51,8 @@ module.exports = function(grunt) {
       }
     },
 
+    // only do work on the html files in public/src/
+    // the index.html file in public/ is compiled based on ENV
     targethtml: {
       dist: {
         files: {

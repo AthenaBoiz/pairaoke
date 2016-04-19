@@ -2,7 +2,8 @@ angular.module('karaoke.services')
 
 .factory('mapService', function(eventFactory) {
   var renderMap = function(scope, lat, long, zoom, minZoom, maxZoom, mapId) {
-    scope.map = L.map(mapId).setView([lat, long], zoom);  //<-- zoom level, larger is zoomed in
+    // higher value of zoom is more zoomed in
+    scope.map = L.map(mapId).setView([lat, long], zoom);
     L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
       attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       subdomains: 'abcd',

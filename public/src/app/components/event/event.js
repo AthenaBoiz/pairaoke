@@ -1,7 +1,6 @@
 angular.module('karaoke.event', [])
 
 .controller('eventCtrl', function($scope, $stateParams, eventFactory, mapService, $sce) {
-
   $scope.creator = '';
   $scope.song = '';
   $scope.artist = '';
@@ -11,6 +10,7 @@ angular.module('karaoke.event', [])
   $scope.loading = true;
   $scope.loadingMessage = 'retrieving event information';
 
+  // use the eventID to query the db
   eventFactory.getOne($stateParams.eventID)
   .then(function(response) {
     var date = eventFactory.parseTime(response.time);
@@ -25,5 +25,4 @@ angular.module('karaoke.event', [])
     mapService.addIcon(response.lat, response.long, $scope.map);
     $scope.loading = false;
   });
-
 });

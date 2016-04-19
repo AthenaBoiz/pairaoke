@@ -6,6 +6,7 @@ angular.module('karaoke.home', [])
   $scope.loading = true;
   $scope.loadingMessage = 'loading events in your area';
 
+  // check to see if user location has been saved on $rootScope before calling .getPosition
   if (!$rootScope.userLocation) {
     locationFactory.getPosition()
       .then(function(pos) {
@@ -20,6 +21,7 @@ angular.module('karaoke.home', [])
     mapLocalEvents();
   }
 
+  // make map and query for events within 30 miles (48,000 meters) of the user's location
   function mapLocalEvents() {
     mapService.renderMap($scope, $scope.lat, $scope.long, 14, 0, 20, 'map');
     queryLocalEvents($scope.lat, $scope.long, 48000);

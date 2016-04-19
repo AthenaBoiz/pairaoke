@@ -17,6 +17,7 @@ angular.module('karaoke.nav', [])
   	authFactory.logout();
   };
 
+  // if menu is open when the user's location changes, toggle it closed
   $scope.$on('$locationChangeStart', function(next, current) {
     if ($scope.droppedDown) {
       $scope.toggleMenu();

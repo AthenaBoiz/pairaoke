@@ -5,6 +5,7 @@ angular.module('karaoke.services')
   var burgerLine2 = document.getElementById('burgerLine2');
   var burgerLine3 = document.getElementById('burgerLine3');
 
+  // animate menu icon from burger formation to X formation
   var burgerOpen = function() {
     Velocity(burgerLine1, { y1: '+= 6', y2: '+= 6' }, { duration: 400 });
     Velocity(burgerLine1, { y1: '+= 7', y2: '-= 7'}, { duration: 400 });
@@ -13,6 +14,7 @@ angular.module('karaoke.services')
     Velocity(burgerLine3, { y1: '-= 7', y2: '+= 7'}, { duration: 400 });
   };
 
+  // animate menu icon from X formation to burger formation
   var burgerClose = function() {
     Velocity(burgerLine1, { y1: '-= 7', y2: '+= 7' }, { duration: 400 });
     Velocity(burgerLine1, { y1: '-= 6', y2: '-= 6'}, { duration: 400 });
