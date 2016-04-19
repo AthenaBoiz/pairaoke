@@ -9,6 +9,7 @@ angular.module('karaoke.addevent', [])
   $scope.loading = true;
   $scope.loadingMessage = 'establishing user location';
 
+  // check to see if user location has been saved on $rootScope before calling .getPosition
   if (!$rootScope.userLocation) {
     locationFactory.getPosition()
     .then(function(pos) {
@@ -38,5 +39,4 @@ angular.module('karaoke.addevent', [])
     $scope.map.on('click', mapService.eventMapClickHandler.bind($scope));
     $scope.loading = false;
   }
-
 });
